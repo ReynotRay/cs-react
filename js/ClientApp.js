@@ -1,15 +1,23 @@
-var React = require('react')
-var ReactDOM = require ('react-dom')
-var MyTitle = require('./MyTitle')
+var div = React.DOM.div
+var h1 = React.DOM.h1
 
-var MyFirstComponent = function () {
-	<div>
-		MyTitleFact({title: 'Props are great!', color: 'rebeccapurple'}),
-		React.createElement(MyTitle,{title: 'use props everywhere!', color: 'mediumaquamarine'}),
-		ce(MyTitle,{title: 'Props are the best!', color: 'papayawhip'})
-	
-	</div>
-		)
-}
+var MyTitle = React.createClass({
+  render () {
+    return (
+      div(null,
+        h1(null, this.props.title)
+      )
+    )
+  }
+})
+
+
+var MyFirstComponent = (
+  div(null,
+    
+    React.createElement(MyTitle, {title: 'Use props everywhere!'})
+    
+  )
+)
 
 ReactDOM.render(MyFirstComponent, document.getElementById('app'))
