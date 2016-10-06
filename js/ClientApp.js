@@ -1,23 +1,14 @@
-var div = React.DOM.div
-var h1 = React.DOM.h1
+var React = require('react')
+var ReactDOM = require('react-dom')
+const div = React.DOM.div
+var MyTitle = require('./MyTitle')
 
-var MyTitle = React.createClass({
-  render () {
-    return (
-      div(null,
-        h1(null, this.props.title)
-      )
-    )
-  }
-})
+var MyTitleFact = React.createFactory(MyTitle)
 
-
-var MyFirstComponent = (
+const TitleComponent = (
   div(null,
-    
-    React.createElement(MyTitle, {title: 'Use props everywhere!'})
-    
+    MyTitleFact({title: 'Spotify App!', color:'papayawhip'})
   )
 )
 
-ReactDOM.render(MyFirstComponent, document.getElementById('app'))
+ReactDOM.render(TitleComponent, document.getElementById('app'))
