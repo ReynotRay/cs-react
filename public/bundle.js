@@ -25164,19 +25164,20 @@
 	'use strict';
 
 	var React = __webpack_require__(1);
-	var data = __webpack_require__(218);
+	var ShowCard = __webpack_require__(220);
+	var data = __webpack_require__(219);
 
 	var Search = function Search() {
 	  return React.createElement(
 	    'div',
 	    { className: 'container' },
-	    data.artists.map(function (artist) {
-	      return React.createElement(
-	        'h3',
-	        null,
-	        artist.name
-	      );
-	    })
+	    React.createElement(
+	      'div',
+	      { className: 'shows' },
+	      data.artists.map(function (artist) {
+	        return React.createElement(ShowCard, { show: artist });
+	      })
+	    )
 	  );
 	};
 
@@ -25203,7 +25204,8 @@
 	// })
 
 
-
+	    //  <div className='artist'>
+	     // <img src={`public/img.posters`}
 
 
 	// 'https://api.spotify.com/v1/search?query='+str+'&offset=0&limit=20&type=artist'
@@ -25212,7 +25214,8 @@
 	*/
 
 /***/ },
-/* 218 */
+/* 218 */,
+/* 219 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -25769,6 +25772,24 @@
 			}
 		]
 	};
+
+/***/ },
+/* 220 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var ShowCard = function ShowCard(props) {
+	    return React.createElement(
+	        'h3',
+	        null,
+	        props.show.name
+	    );
+	};
+
+	module.exports = ShowCard;
 
 /***/ }
 /******/ ]);

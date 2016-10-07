@@ -1,12 +1,15 @@
 const React = require('react')
+const ShowCard = require('./ShowArtist')
 const data = require('../public/data')
 
 const Search = () => (
   <div className='container'>
-    {data.artists.map((artist) => (
-      <h3>{artist.name}</h3>
-    ))}
-</div>
+    <div className='shows'>
+          {data.artists.map((artist) => (
+              <ShowCard show={artist} />
+      ))}
+    </div>
+  </div>
 )
 
 module.exports = Search
@@ -32,7 +35,8 @@ module.exports = Search
 // })
 
 
-
+    //  <div className='artist'>
+     // <img src={`public/img.posters`}
 
 
 // 'https://api.spotify.com/v1/search?query='+str+'&offset=0&limit=20&type=artist'
